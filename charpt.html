@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+</head>
+<body>
+	<div style="opositio:absolute;top:50px;left:50px;">
+		<canvas id="canvas" width="500" height="500">
+		Your browser does not support HTML5 Canvas.
+	</canvas>
+	</div>
+	<script type="text/javascript">
+	window.addEventListener("load",eventWindowLoader,false);
+	var Debugger = function(){};
+	Debugger.log = function(message){
+		try{
+			console.log(message);
+		} catch (exception){
+			return;
+		}
+	}
+	window.requestAnimFrame = (function(){
+		return window.requestAnimationFrame ||
+		window.webkitRequestAnimationFrame ||
+		window.mozRequestAnimationFrame ||
+		window.oRequestAnimationFrame ||
+		window.msRequestAnimationFrame ||
+		function(callback){
+			window.setTimeout(callback,1000/60);
+		};
+	})();
+	function eventWindowLoader(){
+		cavasApp();
+	}
+	function canvasSupport (){
+		return !!document.createElement('canvas').getContext;
+	}
+	function cavasApp(){
+		if(!canvasSupport){
+			return;
+		}else{
+			var theCanvas = document.getElementById("canvas");
+			var c = theCanvas.getContext("2d");
+		}
+
+		Debugger.log("Drawing Canvas");
+		drawScreen();
+		var yOffset = 0;
+
+		function drawScreen(){
+			//
+			// var gr = c.createLinearGradient(0,0,100,100);
+			// gr.addColorStop(0,'rgb(255,0,0)');
+			// gr.addColorStop(.5,'rgb(0,255,0)');
+			// gr.addColorStop(1,'rgb(255,0,0)');
+			// c.fillStyle = gr;
+			// c.fillRect(0,0,100,100)
+
+			c.clearRect(0,0,theCanvas.width,theCanvas.height);
+			var currentPath = c.beginPath();
+			c.strokeStyle = 'red';
+			c.lineWidth = 5;
+			c.moveTo(0,0+yOffset);
+			c.lineTo(50,0+yOffset);
+			c.lineTo(50,50+yOffset);
+			c.stroke();
+			c.closePath();
+			yOffset+=1;
+
+		};
+		(function gameLoop(){
+				window.requestAnimFrame(gameLoop,20);
+				drawScreen();
+			}
+		)();
+		
+	}
+	
+
+	</script>
+</body>
+</html>

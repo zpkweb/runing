@@ -1,0 +1,107 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#gameover{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: url('../images/gameover.png') no-repeat;
+	background-size: 100% 100%;
+}
+.share-finger-box{
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 9;
+	width: 100%;
+	height: 100%;
+}
+.share-finger-shadow{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+.share-finger{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 8;
+	width: 100%;
+    height: 100%;
+    background: url('../images/share-finger.png') no-repeat;
+    background-size: 100% 100%;
+}
+.run-meters{
+	position: absolute;
+	top: 39%;
+    left: 30%;
+    width: 70%;
+    font-size: 16px;
+	font-weight: bold;
+	color: #c72c3b;
+}
+.gameover-button-box{
+	position: absolute;
+	top: 77%;
+	left: 0px;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+}
+.gameover-button-box a{
+	text-decoration: none;
+}
+.gameover-button{
+	
+	display: inline-block;
+	width: 33%;
+	height: 100%;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	color: #c72c3b;
+	background-color: #fff;
+	box-shadow: 0px 0px 5px #ddd;
+}
+
+.againGame-button{
+	float: left;
+	margin-left: 16%;
+}
+.share-button{
+	float: right;
+	margin-right: 13%;
+}
+/*
+.share-text{
+	position: absolute;
+	bottom: 5%;
+	left: 0px;
+	width: 100%;
+	font-size: 12px;
+	text-align: center;
+	color: #c72c3b;
+	
+}
+.share-text a {
+	text-decoration: none;
+	color: #c72c3b;
+}*/
+.share-text-a{
+	margin-top: 2%;
+    display: inline-block;
+    font-size: 12px;
+    width: 50%;
+    line-height: 116%;
+    color: #c72c3b;
+}
